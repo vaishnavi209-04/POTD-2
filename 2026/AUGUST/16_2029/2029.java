@@ -1,0 +1,18 @@
+//Approach 1:O(n)
+class Solution {
+    public boolean stoneGameIX(int[] stones) {
+        int[] count=new int[3];
+        for(int stone:stones)
+        {
+            count[stone%3]++;
+        }
+
+        if(count[0]%2==0)
+        {
+            return count[1]>0 && count[2]>0;
+        }
+
+        return Math.abs(count[2]-count[1])>2;
+        
+    }
+}
